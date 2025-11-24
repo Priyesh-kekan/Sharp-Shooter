@@ -4,6 +4,7 @@ using System.Runtime.ExceptionServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ActiveWeapon : MonoBehaviour
@@ -86,7 +87,9 @@ public class ActiveWeapon : MonoBehaviour
 
         if (currentWeapon)
         {
-            Destroy(currentWeapon.gameObject);
+            {
+                Destroy(currentWeapon.gameObject);
+            }
         }
 
         totalAmmoUI.text = weaponSO.magazineSize.ToString("D2");

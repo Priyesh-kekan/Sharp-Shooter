@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public abstract class Pickup : MonoBehaviour
 {
@@ -15,7 +16,11 @@ public abstract class Pickup : MonoBehaviour
         {
             ActiveWeapon activeWeapon = other.GetComponentInChildren<ActiveWeapon>();
             OnPickup(activeWeapon);
-            Destroy(gameObject);
+            if (SceneManager.GetActiveScene().name == "Aim_Training") return;
+            else
+            {
+                Destroy(gameObject);
+            }
         }
     }
 
